@@ -7,8 +7,6 @@
         <param name="music_file_path" value="/home/deguchi-a/demo/src/sound/src/bgm1.mp3"/> 
     </node>
 
-    <node name="follow_point" pkg="sound" type="follow_point" output="screen"/>
-
     <!-- Effect play file -->
     <node name="effect_play_publish_node" pkg="sound" type="effect_play_publish_node" output="screen"/>
 
