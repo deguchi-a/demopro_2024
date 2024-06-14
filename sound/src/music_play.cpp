@@ -1,6 +1,5 @@
 #include <ros/ros.h>
 #include <sound_play/sound_play.h>
-#include <nav_msgs/Odometry.h>
 
 int main(int argc, char** argv)
 {
@@ -22,12 +21,12 @@ int main(int argc, char** argv)
     std::string music_play;
     pnh.getParam("music_file_path",music_play);
     
-    // if (!music_play.empty() && linear_x > 0.0){
-    //     sc.playWave(music_play);
-    // }
-    // else if(linear_x == 0.0){
-    //     sc.stopWave(music_play);
-    // }
+    if (!music_play.empty()){
+        sc.playWave(music_play);
+        ROS_INFO("Playing music : %s",music_play.c_str());
+    }else{
+        ROS_WARN("Invalid ERROR");
+    }
 
     ros::spin();
     return 0;
