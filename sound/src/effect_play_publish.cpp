@@ -34,7 +34,6 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh;
     effect_pub = nh.advertise<std_msgs::String>("/effect_path", 10);
     ros::Subscriber effect_id_sub = nh.subscribe("/effect_id_request", 10, effectIdCallback);
-
     ros::spin();
     return 0;
 }
